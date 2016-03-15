@@ -1,7 +1,7 @@
-Vmware Workstation 12 Pro promiscuous mode patch
-================================================
+VMware Workstation12Pro promiscuous mode patch
+==============================================
 
-This patch will creare the necessary groups and changes necessary
+This patch will create the necessary group and changes necessary
 in order to enable promiscuous mode in vmware workstation 12.
 
 The problem is that by defult the vmware service creates vmnet\*
