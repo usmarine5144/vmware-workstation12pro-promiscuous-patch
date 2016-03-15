@@ -1,5 +1,5 @@
-VMware Workstation12Pro promiscuous mode patch
-==============================================
+VMware Workstation 12 Pro promiscuous mode patch
+================================================
 
 This patch will create the necessary group and changes necessary
 in order to enable promiscuous mode in vmware workstation 12.
