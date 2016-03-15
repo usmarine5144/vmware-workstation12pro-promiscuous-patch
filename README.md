@@ -16,4 +16,4 @@ This patch will do the following
 
 After this patch has been run you must add users in to the vmnet
 group so that they are also provided the write ability to the device
-  adduser <username> vmnet
+  * adduser \<username\> vmnet
