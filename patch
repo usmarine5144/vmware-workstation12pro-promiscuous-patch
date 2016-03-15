@@ -16,7 +16,13 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Reloading vmware service"
-systemctl restart vmware
+which systemctl > /dev/null
+if [ $? -ne 0 ]; then
+  # systemctl no exist
+  service vmware restart
+else
+  systemctl restart vmware
+fi
 
 echo "----"
 echo "All done!"
