@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $UID -ne 0 ]; then
+  echo "You must run this as root"
+fi
+
+echo "Creating vmnet group"
+addgroup vmnet
+
+echo "Patching init script"
+patch /etc/init.d/vmware vmware_workstation_linux.patch
+if [ $? -ne 0 ]; then
+  echo "Failed to patch vmware init script. Is vmware workstation installed?"
+  exit 1
+fi
+
+echo "Reloading vmware service"
+systemctl restart vmware
+
+echo "----"
+echo "All done!"
+echo "You must add users to the 'vmnet' group in order to be able to start a vm in promiscuous mode."
+echo "    # adduser <username> vmnet"
+echo "Be sure to log off and log on again."
