@@ -21,6 +21,7 @@ if [ $? -ne 0 ]; then
   # systemctl no exist
   service vmware restart
 else
+  systemctl daemon-reload
   systemctl restart vmware
 fi
 
